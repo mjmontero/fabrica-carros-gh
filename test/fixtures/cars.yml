@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  car_model: MyString
+  description: MyString
+
+two:
+  type: 
+  car_model: MyString
+  description: MyString

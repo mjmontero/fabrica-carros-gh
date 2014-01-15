@@ -1,0 +1,41 @@
+<%= form_for(@car_part) do |f| %>
+  <% if @car_part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car_part.errors.count, "error") %> prohibited this car_part from being saved:</h2>
+
+      <ul>
+      <% @car_part.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :part_type_id %><br />
+    <%= collection_select(:car_part, :part_type_id, PartType.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :part_model %><br />
+    <%= f.text_field :part_model %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+
+  <div class="field">
+	<%= fields_for @car_part.picture do |pf| %>
+    <%= pf.label :picture %><br />
+    <%= pf.text_field :name %>
+  <% end %>
+  </div>
+
+
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

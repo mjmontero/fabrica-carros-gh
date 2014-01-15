@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @car.car_type.name %>
+</p>
+
+<p>
+  <b>Car model:</b>
+  <%= @car.car_model %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @car.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <% if !@car.picture.nil? %>
+	  <%= @car.picture.name %>
+  <% end %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

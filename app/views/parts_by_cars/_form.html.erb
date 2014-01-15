@@ -1,0 +1,25 @@
+<%= form_for(@parts_by_car) do |f| %>
+  <% if @parts_by_car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@parts_by_car.errors.count, "error") %> prohibited this parts_by_car from being saved:</h2>
+
+      <ul>
+      <% @parts_by_car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :car_id %><br />
+    <%= collection_select(:car, :collection_id, Car.all, :id, :car_model) %>
+  </div>
+  <div class="field">
+    <%= f.label :car_part_id %><br />
+    <%= collection_select(:car_part, :collection_id, CarPart.all, :id, :part_model) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

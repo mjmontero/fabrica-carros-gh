@@ -1,0 +1,42 @@
+<h1>Listing car_parts</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Part model</th>
+    <th>Description</th>
+    <th>Picture</th>
+    <th>Cars</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_parts.each do |car_part| %>
+  <tr>
+    <td><%= car_part.part_type.name %></td>
+    <td><%= car_part.part_model %></td>
+    <td><%= car_part.description %></td>
+
+	<td>
+  <% if !car_part.picture.nil? %>
+    <%= car_part.picture.name %>
+  <%end %>    
+    <td/>
+
+<td>  
+<% car_part.cars.each do |car| %>
+  <%= car.description %> | 
+<% end %>  
+</td>
+    
+    <td><%= link_to 'Show', car_part %></td>
+    <td><%= link_to 'Edit', edit_car_part_path(car_part) %></td>
+    <td><%= link_to 'Destroy', car_part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car part', new_car_part_path %>

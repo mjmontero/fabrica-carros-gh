@@ -1,0 +1,48 @@
+<%= form_for(@car) do |f| %>
+  <% if @car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+      <ul>
+      <% @car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :car_type_id %><br />
+    <%= collection_select(:car, :car_type_id, CarType.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :car_model %><br />
+    <%= f.text_field :car_model %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+
+  <div class="field">
+	<%= fields_for @car.picture do |pf| %>
+    <%= pf.label :picture %><br />
+	    <%= pf.text_field :name %>
+  <% end %>
+  </div>
+
+
+<h2>Car Parts</h2>
+  <% CarPart.all.each do |car_part| -%>
+  <div class="field">
+      <%= check_box_tag :car_part_ids, car_part.id, @car.car_parts.include?(car_part), :name => 'car[car_part_ids][]' -%>
+      <%= label_tag :car_type_ids, car_part.description -%>
+    </div>
+  <% end -%>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

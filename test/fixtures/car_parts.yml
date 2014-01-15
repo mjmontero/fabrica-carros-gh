@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  part_model: 
+  description: MyString
+
+two:
+  type: 
+  part_model: 
+  description: MyString
