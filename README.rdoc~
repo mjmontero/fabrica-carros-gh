@@ -4,8 +4,3 @@ Proyecto de prueba realizado por Maria Jose Montero para Excel Softsources
 
 Todos los carros están compuestos de parte (llantas, tornillos, motor) y cada parte puede pertener a muchos tipos de carros (many-to-many). Tanto los carros, como las partes, tiene una foto asociada (polimorfismo). El sistema administrará los diferentes tipos de carros y un número restringido de partes asociadas a los carros.
 
-Limitaciones:
-
-1. Se asume que es una BD relacional (Se uso sqlite3 para probar)
-2. No se incluyen consideraciones de estilo (HTML/CSS) 
-3. La funcionalidad se limita a lo requerido en la descripcion del proyecto. En especial, se limito el trabajo en las vistas, para concentrarse en lo solicitado en la especificacion.
