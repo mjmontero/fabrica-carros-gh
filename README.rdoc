@@ -1,8 +1,8 @@
 == Fabrica de Carros 
 
-Proyecto de prueba realizado por Maria Jose Montero para Excel Softsources
+Proyecto de prueba realizado por Maria Jose Montero
 
-Todos los carros están compuestos de parte (llantas, tornillos, motor) y cada parte puede pertener a muchos tipos de carros (many-to-many). Tanto los carros, como las partes, tiene una foto asociada (polimorfismo). El sistema administrará los diferentes tipos de carros y un número restringido de partes asociadas a los carros.
+Todos los carros estï¿½n compuestos de parte (llantas, tornillos, motor) y cada parte puede pertener a muchos tipos de carros (many-to-many). Tanto los carros, como las partes, tiene una foto asociada (polimorfismo). El sistema administrarï¿½ los diferentes tipos de carros y un nï¿½mero restringido de partes asociadas a los carros.
 
 Limitaciones:
 
